@@ -1,0 +1,39 @@
+EJECUTAR LOCALHOST Y HOST VIRTUALES
+1-ejecutar cmd como admin.
+2-pegar esta linea "CheckNetIsolation LoopbackExempt -a -n=Microsoft.MicrosoftEdge_8wekyb3d8bbwe"
+:::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+//PERMISOS DE HOST
+# C:\xampp\apache\conf\httpd.conf
+
+<Directory />
+	Options FollowSymLinks
+	AllowOverride None
+	Order deny,allow
+	Allow from all
+</Directory>
+
+
+// INSTALACION
+// UBICACION hosts
+
+# C:\Windows\System32\drivers\etc
+
+#LOCALHOST
+127.0.0.1 localhost
+127.0.0.1 mihostasd.localhost
+
+// INSTALACION HTTPD
+// UBICACION httpd-vhosts.conf
+
+# C:\xampp\apache\conf\extra
+
+NameVirtualHost *:80
+>
+
+<VirtualHost *:80>
+	DocumentRoot "C:/PROYECTOS/carpetaproyectohost"
+	ServerName mihostasd.localhost
+	ErrorLog "logs/mihostasd.localhost-error.log"
+	CustomLog "logs/mihostasd.localhost-access.log" combined
+</VirtualHost>

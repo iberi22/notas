@@ -1,0 +1,8 @@
+// configuracion para poder activar la seguridad de envio de correo mediante SMTP
+Links that fix the problem (you must be logged into google account):
+
+https://www.google.com/settings/u/1/security/lesssecureapps // este me funciono
+
+https://accounts.google.com/b/0/DisplayUnlockCaptcha
+
+https://security.google.com/settings/security/activity?hl=en&pli=1

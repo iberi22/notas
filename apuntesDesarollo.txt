@@ -1,0 +1,50 @@
+// AGREGAR DAEMON A UPSTART RUN LEVELS
+sudo update-rc.d service_name defaults
+
+// QUITAR DAEMON A UPSTART RUNLEVELS
+sudo update-rc.d -f service_name remove
+
+
+// SERVICIOS GOGS CONSOLE
+sudo su - gogs
+cd /opt/gogs/
+./gogs web
+
+// SERVICIOS GOGS SERVICE
+sudo /etc/init.d/gogs restart
+
+// SERVICIOS APACHE
+sudo /opt/lampp/lampp start
+sudo /opt/lampp/lampp restart
+sudo /opt/lampp/lampp restartapache
+sudo /opt/lampp/lampp reloadmysql
+sudo /opt/lampp/lampp stop
+
+sudo /opt/lampp/lampp			-> Mostrar servicios y descripcion
+Usage: /opt/lampp/lampp
+
+    start           Start XAMPP (Apache, MySQL and eventually others)
+    startapache     Start only Apache
+    startssl        Start only SSL support
+    startmysql      Start only MySQL
+    startftp        Start only ProFTPD
+
+    stop            Stop XAMPP (Apache, MySQL and eventually others)
+    stopapache      Stop only Apache
+    stopssl         Stop only SSL support
+    stopmysql       Stop only MySQL
+    stopftp         Stop only ProFTPD
+
+    reload          Reload XAMPP (Apache, MySQL and eventually others)
+    reloadapache    Reload only Apache
+    reloadmysql     Reload only MySQL
+    reloadftp       Reload only ProFTPD
+
+    restart         Stop and start XAMPP
+    security        Check XAMPP's security
+
+    php5            Activate PHP5
+    phpstatus       Which version of PHP is active?
+
+    backup          Make backup file of your XAMPP config, log and data files
+    panel           Starts graphical XAMPP control panel
